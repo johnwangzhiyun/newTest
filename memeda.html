@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.8女神节表白</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        #message {
+            font-size: 1.5em;
+            margin: 20px 0;
+            transition: all 0.5s ease;
+        }
+
+        button {
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>亲爱的媳妇，</h1>
+        <p>在这个特别的日子里，我想对你说：</p>
+        <p id="message">你是我生命中最美的女神！</p>
+        <button onclick="showLove()">点击这里</button>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bg-music" loop autoplay>
+        <source src="https://raw.githubusercontent.com/用户名/仓库名/分支名/wanqiu.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+
+    <script>
+        // 背景音乐控制
+        const bgMusic = document.getElementById('bg-music');
+        bgMusic.volume = 0.3; // 设置音量
+
+        // 确保音乐自动播放（解决浏览器自动播放策略问题）
+        document.addEventListener('click', () => {
+            bgMusic.play();
+        }, { once: true });
+
+        // 表白内容数组
+        const messages = [
+            "你是我生命中最美的女神！",
+            "我爱你，永远爱你❤️",
+            "你是我心中的唯一！",
+            "和你在一起的每一天都是节日！",
+            "你是我最大的幸福！",
+            "愿我们永远幸福快乐！",
+            "你是我心中永远的女神！",
+            "爱你，直到天荒地老！",
+            "你是我生命中的阳光！",
+            "愿我们的爱永远甜蜜！"
+        ];
+
+        // 表白动态效果
+        function showLove() {
+            const message = document.getElementById('message');
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            message.innerHTML = randomMessage;
+        }
+    </script>
+</body>
+</html>
